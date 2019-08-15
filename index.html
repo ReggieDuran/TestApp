@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test App</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<style type="text/css">
+	body .container { 
+	    position: relative;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: center;
+	    height: 100vh;
+	}
+
+	.input-container {
+		text-align: center;
+	}
+	.title {
+		font-size: 30px;
+	}
+	.incorrect, .correct {
+		font-size: 20px;
+	}
+	.incorrect {
+	    position: relative;
+	    color: red;
+   		left: -20%;
+   		bottom: -20px;
+	}
+	.correct {
+	    position: relative;
+	    color: green;
+   		right: -20%;
+	}
+	input[type="text"] {
+	    width: 350px;
+		height: 60px;
+		text-align: center;
+		margin: 1.5%;
+	}
+	button {
+	    color: #fff;
+		background-color: #286090;
+		border-color: #204d74;
+		padding: 10px 16px;
+		font-size: 18px;
+		line-height: 1.3333333;
+		border-radius: 6px;
+	}
+</style>
+
+<body ng-app="TestApp" ng-controller="TestController">
+	<div class="container">
+		<div class="title">
+			Guesses Left : {{guesses}}
+		</div>
+		<div class="incorrect">
+			Incorrect Guesses : 
+			<span ng-repeat="letter in incorrectLettersChosen">
+				{{letter}}
+			</span>
+		</div>
+		<div class="correct">
+			Correct Guesses :
+			<span ng-repeat="letter in correctLettersChosen">
+				{{letter}}
+			</span>
+		</div>
+
+		<div>
+			You have to guess: {{displayWord}}		
+		</div>
+
+		<div>
+			<div class="input-container">
+				<input type="text" name="guess" ng-model="input.letter">
+				<button ng-click="letterChoosen()">Submit</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
