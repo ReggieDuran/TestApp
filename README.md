@@ -1,3 +1,5 @@
+First you need to download this file or clone this repo into you PC and place it in one folder. Then run the index.html file in Chrome.
+
 Sample Test App for Spiral Work (test-jobs)
 
 Build an App using Angular. It is a guessing game app.
